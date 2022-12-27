@@ -6,6 +6,7 @@
   "license": "",
   "author": "",
   "scripts": {
+    "build:prod": "parcel build index.html --public-url ./nochkidgames/ --out-dir docs ",
     "build": "parcel build index.html --public-url ./ --out-dir docs",
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
