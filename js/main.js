@@ -135,8 +135,11 @@ const attachListeners = () => {
   canvas.addEventListener("mousedown", handleGrabCircle);
   canvas.addEventListener("mouseup", handleReleaseGrabbedCircle);
   canvas.addEventListener("mousemove", handleMoveGrabbedCircle);
+
   canvas.addEventListener('touchstart', (e) => execOnFingers(handleGrabCircle, e));
   canvas.addEventListener('touchend', (e) => execOnFingers(handleReleaseGrabbedCircle, e));
+  canvas.addEventListener('touchcancel', (e) => execOnFingers(handleReleaseGrabbedCircle, e));
+
   canvas.addEventListener('touchmove', (e) => execOnFingers(handleMoveGrabbedCircle, e));
 };
 
