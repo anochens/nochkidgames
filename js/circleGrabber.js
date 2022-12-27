@@ -4,6 +4,7 @@ export let grabbedCircles = [];
 export let mouseIsDown = false;
 
 export const handleGrabCircle = (e) => {
+  console.log('grabbing circle at ', e.clientX, e.clientY, e.clientX, e.clientY);
   mouseIsDown = true;
   const mousePos = {
     x: e.clientX - canvas.offsetLeft,
@@ -43,4 +44,12 @@ export const handleMoveGrabbedCircle = (e) => {
       circles[grabbedCircles[i]].y = mousePos.y;
     }
   }
+}
+
+export const execOnFingers = (f, e) => {
+  for(let i = 0; i < e.touches.length; i++) {
+    f(e.touches[i]);
+  }
+  e.preventDefault();
+  e.stopPropagation()
 }

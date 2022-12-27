@@ -1,5 +1,6 @@
 import {clearCanvas, collides, collidesWithRect, getNewCircle, rects} from "./utils";
 import {
+  execOnFingers,
   grabbedCircles,
   handleGrabCircle,
   handleMoveGrabbedCircle,
@@ -133,10 +134,8 @@ document.addKid = addKid;
 canvas.addEventListener("mousedown", handleGrabCircle);
 canvas.addEventListener("mouseup", handleReleaseGrabbedCircle);
 canvas.addEventListener("mousemove", handleMoveGrabbedCircle);
-
-canvas.addEventListener('touchstart', handleGrabCircle, false);
-canvas.addEventListener('touchmove', handleMoveGrabbedCircle, false);
-canvas.addEventListener('touchcancel', handleReleaseGrabbedCircle, false);
-canvas.addEventListener('touchend', handleReleaseGrabbedCircle, false);
+canvas.addEventListener('touchstart', (e) => execOnFingers(handleGrabCircle, e));
+canvas.addEventListener('touchend', (e) => execOnFingers(handleReleaseGrabbedCircle, e));
+canvas.addEventListener('touchmove', (e) => execOnFingers(handleMoveGrabbedCircle, e));
 
 setInterval(drawEverything, 50);
