@@ -50,7 +50,7 @@ export const execOnFingers = (f, e) => {
   for(let i = 0; i < e.touches.length; i++) {
     f(e.touches[i]);
   }
-  if(grabbedCircles.length > 0) {
+  if(true || grabbedCircles.length > 0) {
     e.preventDefault();
     e.stopPropagation();
   }

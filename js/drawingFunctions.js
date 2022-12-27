@@ -44,6 +44,7 @@ export const drawBase = (x) => {
 }
 
 export const drawMenorah = () => {
+
   for (let i = 0; i <= 8; i++) {
     const boost = i === 4;
     drawCircle(75 + i * 100, 345 - (boost ? 100 : 0), 15, "red", "yellow");
@@ -67,6 +68,6 @@ export const drawCircles = () => {
 export const drawScore = () => {
   ctx.font = "30px Arial";
   const {oldColor, oldFillColor} = saveColors("black", "black");
-  ctx.fillText(`Score: ${score}`, 850, 30);
+  ctx.fillText(`Score: ${score}`, 50, 30);
   restoreColors(oldColor, oldFillColor);
 }

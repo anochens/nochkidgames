@@ -7,14 +7,14 @@ import {
   handleReleaseGrabbedCircle,
   mouseIsDown
 } from "./circleGrabber";
-import {drawCircle, drawCircles, drawMenorah, drawScore, restoreColors, saveColors} from "./drawingFunctions";
+import {drawCircle, drawCircles, drawMenorah, drawScore} from "./drawingFunctions";
 
 export let canvas = document.querySelector("#myCanvas");
 export let ctx = canvas.getContext("2d");
 
 ctx.fillStyle = "#FF0000";
 
-const HEIGHT = 1000, WIDTH = 1000;
+const HEIGHT = 500, WIDTH = 1000;
 
 export let score = 0;
 
@@ -33,7 +33,7 @@ const moveCircles = (e) => {
   for(let i = 0; i < circles.length; i++) {
     if(!circles[i]) circles[i] = getNewCircle();
 
-    if (collidesWithRect(circles[i])) {
+    if (false && collidesWithRect(circles[i])) {
       circles[i].direction_x *= -1;
       circles[i].direction_y *= -1;
     }
@@ -94,7 +94,7 @@ const checkIfCirclesAreInBin = () => {
   });
 };
 
-export const binCircle = {x: 1000, y: 1000, r: 200};
+export const binCircle = {x: 1000, y: 0, r: 200};
 
 let binColor = "black";
 function drawEverything() {
