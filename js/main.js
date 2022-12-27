@@ -134,4 +134,9 @@ canvas.addEventListener("mousedown", handleGrabCircle);
 canvas.addEventListener("mouseup", handleReleaseGrabbedCircle);
 canvas.addEventListener("mousemove", handleMoveGrabbedCircle);
 
+canvas.addEventListener('touchstart', handleGrabCircle, false);
+canvas.addEventListener('touchmove', handleMoveGrabbedCircle, false);
+canvas.addEventListener('touchcancel', handleReleaseGrabbedCircle, false);
+canvas.addEventListener('touchend', handleReleaseGrabbedCircle, false);
+
 setInterval(drawEverything, 50);
