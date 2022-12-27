@@ -68,6 +68,6 @@ export const drawCircles = () => {
 export const drawScore = () => {
   ctx.font = "30px Arial";
   const {oldColor, oldFillColor} = saveColors("black", "black");
-  ctx.fillText(`Score: ${score}`, 50, 30);
+  ctx.fillText(score, 20, 50);
   restoreColors(oldColor, oldFillColor);
 }

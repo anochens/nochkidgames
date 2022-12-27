@@ -55,7 +55,7 @@ export const circleCollidesWithBin = (circle) => {
   ) < binCircle.r + circle?.r
 }
 
-const checkIfCirclesAreInBin = () => {
+export const checkIfCirclesAreInBin = () => {
   if(grabbedCircles.length === 0) return;
   circles.filter(x => x).forEach((circle, i) => {
     if (
@@ -113,8 +113,6 @@ function drawEverything() {
   drawMenorah();
 
   drawCircle(binCircle.x, binCircle.y, binCircle.r, "black", binColor);
-
-  checkIfCirclesAreInBin();
 
   drawCircles();
 

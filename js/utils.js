@@ -45,10 +45,11 @@ export const collidesWithRect = (circle) => {
 
 export const getNewCircle = (providedFlavor) => {
   const kidArray = ["dov", "racheli", "eitan"];
-  const x = Math.floor(Math.random() * 8) * 100 + 100;
-  const y = Math.random() * 400 + 100;
-  const r = Math.floor(Math.random() * 30) + 25;
-  const x_boost = 0;//(Math.random() > 0.8) ? 20 : 0;
+  const r = Math.random() * 30 + 25;
+  const y = Math.random() * 200 + r;
+  const x = Math.random() * 800 + r;
+
+  const x_boost = (Math.random() > 0.8) ? 20 : 0;
   const direction_x = Math.random() * 2 - 1 + x_boost;
   const direction_y = (Math.random() * 2 - 1) * 5;
   const flavor = providedFlavor ? kidArray.indexOf(providedFlavor) : Math.floor(Math.random() * 3);
